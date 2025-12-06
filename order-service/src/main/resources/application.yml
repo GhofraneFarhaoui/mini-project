@@ -1,0 +1,20 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:orderdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: "this_is_a_very_long_secret_key_used_for_jwt_signing_please_change_for_prod_0123456789"
+
+product:
+  service:
+    url: http://localhost:8082
