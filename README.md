@@ -44,19 +44,5 @@ Endpoints :
 POST /api/orders
 GET /api/orders/user/{username}
 
-                                   +----------------------+
-                        |     Auth Service     |
-                        |   JWT + Users DB     |
-                        +-----------+----------+
-                                    |
-                                    |
-         ---------------------------------------------------------
-         |                                                       |
-+--------------------+                              +----------------------+
-|  Product Service   |                              |   Order Service      |
-|--------------------|  <---- REST / Feign ---->    |----------------------|
-| CRUD Products      |                              | CRUD Orders          |
-| MySQL/PostgreSQL   |                              | Calls Product API     |
-| DTO + Mapper       |                              | DTO + Mapper          |
-+--------------------+                              +-----------------------+
+                    
 
