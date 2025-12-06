@@ -16,12 +16,19 @@ Chaque service fonctionne avec Spring Boot, utilise une base de données H2 en m
 Technologies:
 
 Java 17
+
 Spring Boot 3
+
 Spring Web
+
 Spring Data JPA
+
 Spring Security
+
 JWT (JJWT 0.11.5)
+
 H2 Database
+
 Maven
 
 
