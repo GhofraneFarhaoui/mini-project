@@ -33,13 +33,21 @@ Maven
 
 
 Structure des dossiers
+
 /microservices-project
+
   /auth-service
+  
     /src/main/java/com/example/authservice
+    
     /src/main/resources
+    
   /product-service
+  
   /order-service
+  
   docker-compose.yml
+  
   README.md
 
 Fonctionnalités principales
