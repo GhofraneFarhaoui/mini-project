@@ -44,29 +44,19 @@ Endpoints :
 POST /api/orders
 GET /api/orders/user/{username}
 
-                        +---------------------+
-                        |  API Gateway |
-                        +-----------+---------+
+                                   +----------------------+
+                        |     Auth Service     |
+                        |   JWT + Users DB     |
+                        +-----------+----------+
                                     |
-                          (REST - Synchrone)
                                     |
-          -----------------------------------------------------
-          |                                                   |
-+--------------------+                          +---------------------+
-|  Product Service   |                          |  Order Service      |
-|--------------------|                          |---------------------|
-| Spring Boot        |  <---- REST Call ---->   | Spring Boot         |
-| CRUD Products      |                          | CRUD Orders         |
-| DTO + Mapper       |                          | Calls ProductSvc    |
-| MySQL/PostgreSQL   |                          | DTO + Mapper        |
-+---------+----------+                          +----------+----------+
-          |                                                   |
-          |                                                   |
-          |                                   (Optional Async, Kafka/RabbitMQ)
-          |                                                   |
-+---------------------+                          +--------------------------+
-|  Auth Service       |                          |  Message Broker         |
-|---------------------|                          |  (Kafka / RabbitMQ)    |
-| JWT Authentication  |                          |  Events: ORDER_CREATED  |
-| User Accounts       |                          |                          |
-+---------------------+                          +--------------------------+
+         ---------------------------------------------------------
+         |                                                       |
++--------------------+                              +----------------------+
+|  Product Service   |                              |   Order Service      |
+|--------------------|  <---- REST / Feign ---->    |----------------------|
+| CRUD Products      |                              | CRUD Orders          |
+| MySQL/PostgreSQL   |                              | Calls Product API     |
+| DTO + Mapper       |                              | DTO + Mapper          |
++--------------------+                              +-----------------------+
+
