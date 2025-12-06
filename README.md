@@ -1,4 +1,5 @@
-Aperçu du projet
+Aperçu du projet:
+
 Ce projet est une architecture microservices simple composée de trois services indépendants :
 
 auth-service
