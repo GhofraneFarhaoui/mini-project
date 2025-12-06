@@ -13,25 +13,17 @@ Permet la création de commandes associées à un utilisateur. Protégé par JWT
 
 Chaque service fonctionne avec Spring Boot, utilise une base de données H2 en mémoire et communique via HTTP REST.
 
-Technologies
+Technologies:
 
 Java 17
-
 Spring Boot 3
-
 Spring Web
-
 Spring Data JPA
-
 Spring Security
-
 JWT (JJWT 0.11.5)
-
 H2 Database
-
 Maven
 
-Docker & Docker Compose (optionnel)
 
 Structure des dossiers
 /microservices-project
